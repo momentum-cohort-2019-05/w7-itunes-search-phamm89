@@ -19,9 +19,33 @@ body{
 #searchButton{
     display: center;
     margin: 1rem;
-    border: 2px lightblue;
+    border: 2px solid black;
     background-color: lightgray;
     width: 75px;
     font-size: 15px;
 }
 
+#musicPlayer > audio{
+    display: center;
+    width: 400px;
+}
+
+.currentlyPlaying{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+#musicResults{
+    display: center;
+    font-size: 15px;
+}
+
+#artist{
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+#track{
+    justify-content: space-evenly;
+}
