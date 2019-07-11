@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+    background-color: aquamarine;
+}
+
+#musicSearch{
+    justify-content: center;
+    min-width: 500px;
+    min-height: 30px;
+}
+
+#searchBar{
+    margin: 1rem;
+    min-width: 350px;
+    font-size: 20px;
+    display: center;
+}
+
+#searchButton{
+    display: center;
+    margin: 1rem;
+    border: 2px lightblue;
+    background-color: lightgray;
+    width: 75px;
+    font-size: 15px;
+}
+
