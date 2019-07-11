@@ -9,8 +9,26 @@
     <title>iTunes Search Bar</title>
 </head>
 <body> 
-        <div>
-                
-        </div>
+
+    <div>
+        <h1>Music Jam</h1>
+    </div>
+    <br>
+    <br>
+    <div id="musicSearch">
+        <input id="searchBar" type="text" placeholder="Search for Artist or Band..." autofocus>
+        <button id="searchButton" type="submit">Search</button>
+    </div>
+    <hr>
+    <div id="musicPlayer">
+        <p class="currentlyPlaying">Currently Playing: </p><audio controls src=''></audio>
+    </div>
+    <hr>
+    <div id="musicResults">
+        <h2>Search Results: </h2>
+        <br>
+        <div id="artist"></div>
+        <div id="track"></div>
+    </div>
 </body>
 </html>
