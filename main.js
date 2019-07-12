@@ -28,29 +28,34 @@ searchForm.addEventListener('keyup', function(event){
 
 // Function to display music tracks by selected artist or band
 function getMusic(songs){
+    const musicDiv = document.createElement('div')
+    musicDiv.innerHTML = `<p>Artist: ${songs.artistName}</p>`
 
-    
+
+
+
+    return musicDiv
 
 }
 
 
 
 // Main execution
-document.addEventListener('DOMContent Loaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     searchForm.addEventListener('submit', function(event) {
         event.preventDefault()
         input = encodeURIComponent(searchBar.value)
-        searchURL = `https://itunes-api-proxy.glitch.me/search?term=${input}&media=music&entity=musicTrack`
+        searchURL = `https://itunes-api-proxy.glitch.me/search?term=${(input)}&media=music&entity=musicTrack`
 
-        fetch(URL)
+        fetch(searchURL)
             .then(response => response.json())
             .then(function (data) {
+                console.log(data)
                 musicResults.innerHTML = ''
                 
-                for (let song of data.results){
-                    musicResults.appendChild(getMusic(song))
+                for (let songs of data.results){
+                    musicResults.appendChild(getMusic(songs))
                 }
-                console.log(data.results[0])
         })
     })
 })
