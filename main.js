@@ -33,7 +33,7 @@ searchForm.addEventListener('keyup', function(event){
 
 // Function to display music tracks by selected artist or band
 function getMusic(songs){
-
+    // Play a song by the artist before any button is clicked
     audioPreview.src = songs.previewUrl
     audioPreview.autoplay = 'true'
 
@@ -45,7 +45,7 @@ function getMusic(songs){
         <button id='playSample' data-url="${songs.previewUrl}" data-track="${songs.trackName}" data-artist="${songs.artistName}">Click Button to Preview: ${songs.trackName}</button>
         <h4>Artist: ${songs.artistName} <br> Genre: ${songs.primaryGenreName}</h4>    
     `
-
+    // Display the song title and artist name of song being played
     currentlyPlaying.innerHTML = `<p class="currentlyPlaying">Currently Playing: ${songs.trackName} by ${songs.artistName}</p>`
 
     return resultsDiv
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             audioPreview.src = event.target.dataset['url']
             audioPreview.autoplay = 'true'
             audioPreview.loop = 'true'
-
+            // When preview button is clicked, also display song title and artist using data attribute from event.target
             currentlyPlaying.innerHTML = `<p class="currentlyPlaying">Currently Playing: ${event.target.dataset['track']} by ${event.target.dataset['artist']}</p>`
           }
         })
