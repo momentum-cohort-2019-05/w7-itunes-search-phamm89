@@ -14,6 +14,9 @@ let searchURL
 const searchForm = q('#searchForm')
 const searchButton = q('#searchButton')
 const searchBar = q('#searchBar')
+const musicResults = q('#musicResults')
+const artist = q('#artist')
+const track = q('#track')
 
 // When user releases Enter key, act as if submit button has been clicked
 searchForm.addEventListener('keyup', function(event){
@@ -23,9 +26,11 @@ searchForm.addEventListener('keyup', function(event){
     }
 })
 
+// Function to display music tracks by selected artist or band
+function getMusic(songs){
 
-function getMusic(){
-// Write the stuff that gets music data
+    
+
 }
 
 
@@ -40,7 +45,11 @@ document.addEventListener('DOMContent Loaded', function() {
         fetch(URL)
             .then(response => response.json())
             .then(function (data) {
-                getMusic(data.results)
+                musicResults.innerHTML = ''
+                
+                for (let song of data.results){
+                    musicResults.appendChild(getMusic(song))
+                }
                 console.log(data.results[0])
         })
     })
