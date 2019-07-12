@@ -34,10 +34,11 @@ function getMusic(songs){
     audioPreview.autoplay = 'true'
 
     const resultsDiv = document.createElement('div')
+    resultsDiv.setAttribute("id", "resultsDiv")
     resultsDiv.innerHTML = `
         <a id="#songName" href="${songs.trackViewUrl}"><img src="${songs.artworkUrl100}"></a>
         <br>
-        <h3>Click to Preview: <a id="#songName" href="${audioPreview.src}"> ${songs.trackName}</a></h3>
+        <h3>Click to Preview: <a id="#songName" href="${songs.previewUrl}"> ${songs.trackName}</a></h3>
         <h4>Artist: ${songs.artistName} <br> Genre: ${songs.primaryGenreName}</h4>
     `
     return resultsDiv
