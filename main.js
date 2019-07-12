@@ -45,9 +45,24 @@ function getMusic(songs){
 }
 
 
+// Function to play music
+function playMusic(songs){
+    // Write function to play music upon click
+}
+
 
 // Main execution
 document.addEventListener('DOMContentLoaded', function() {
+    // Execution for playing a specific track if clicked
+    audioPreview.addEventListener('click', function(event) {
+        console.log(event.target)
+        if (event.target && event.target.matches('')){
+            playMusic(event.target.dataset[''])
+        }
+    })
+
+
+    // Execution for generating list of results upon search button clicked or enter key pressed
     searchForm.addEventListener('submit', function(event) {
         event.preventDefault()
         input = encodeURIComponent(searchBar.value)
