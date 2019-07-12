@@ -17,6 +17,7 @@ const searchBar = q('#searchBar')
 const musicResults = q('#musicResults')
 const artist = q('#artist')
 const track = q('#track')
+const audioPreview = q('#audioPreview')
 
 // When user releases Enter key, act as if submit button has been clicked
 searchForm.addEventListener('keyup', function(event){
