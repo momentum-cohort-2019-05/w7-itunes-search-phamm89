@@ -16,7 +16,7 @@ const searchButton = q('#searchButton')
 const searchBar = q('#searchBar')
 const musicResults = q('#musicResults')
 const artist = q('#artist')
-const track = q('#track')
+const trackDiv = q('#trackDiv')
 const audioPreview = q('#audioPreview')
 
 // When user releases Enter key, act as if submit button has been clicked
