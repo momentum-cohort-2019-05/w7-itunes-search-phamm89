@@ -27,9 +27,11 @@ searchForm.addEventListener('keyup', function(event){
     }
 })
 
+
+
 // Function to display music tracks by selected artist or band
 function getMusic(songs){
-    
+
     audioPreview.src = songs.previewUrl
     audioPreview.autoplay = 'true'
 
@@ -38,28 +40,24 @@ function getMusic(songs){
     resultsDiv.innerHTML = `
         <a id="#songName" href="${songs.trackViewUrl}"><img src="${songs.artworkUrl100}"></a>
         <br>
-        <h3>Click to Preview: <a id="#songName" href="${songs.previewUrl}"> ${songs.trackName}</a></h3>
-        <h4>Artist: ${songs.artistName} <br> Genre: ${songs.primaryGenreName}</h4>
+        <button id='playSample' data-url="${songs.previewUrl}">Click to Preview: ${songs.trackName}</button>
+        <h4>Artist: ${songs.artistName} <br> Genre: ${songs.primaryGenreName}</h4>    
     `
+
     return resultsDiv
-}
-
-
-// Function to play music
-function playMusic(songs){
-    // Write function to play music upon click
 }
 
 
 // Main execution
 document.addEventListener('DOMContentLoaded', function() {
     // Execution for playing a specific track if clicked
-    audioPreview.addEventListener('click', function(event) {
+    musicResults.addEventListener('click', function(event) {
         console.log(event.target)
-        if (event.target && event.target.matches('')){
-            playMusic(event.target.dataset[''])
-        }
-    })
+        if (event.target && event.target.matches('#playSample')) {
+            audioPreview.src = event.target.dataset['url']
+            audioPreview.autoplay = 'true'
+          }
+        })
 
 
     // Execution for generating list of results upon search button clicked or enter key pressed
@@ -73,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function (data) {
                 console.log(data)
                 musicResults.innerHTML = ''
+
                 
                 for (let songs of data.results){
                     musicResults.appendChild(getMusic(songs))

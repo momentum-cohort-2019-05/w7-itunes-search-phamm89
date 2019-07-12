@@ -29,15 +29,34 @@ body{
     display: center;
     margin: 1rem;
     border: 2px solid black;
-    background-color: lightgray;
+    background: #008080;
+    background-image: -webkit-linear-gradient(top, 	#00FFFF,	#008080);  
+    background-image: -moz-linear-gradient(top, 	#00FFFF, #008080);  
+    background-image: -ms-linear-gradient(top, 	#00FFFF, #008080);  
+    background-image: -o-linear-gradient(top, 	#00FFFF, #008080);  
+    background-image: linear-gradient(to bottom, 	#00FFFF, #008080);
+    -webkit-border-radius: 28;  
+    -moz-border-radius: 28;  
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;  
+    -webkit-box-shadow: 6px 5px 24px #666666;  
+    -moz-box-shadow: 6px 5px 24px #666666;  
+    box-shadow: 6px 5px 24px #666666;
     width: 75px;
     font-size: 15px;
 }
 
 #musicPlayer > audio{
     display: center;
+    background: #008080;
+    background-image: -webkit-linear-gradient(top, 	#00FFFF,	#008080);  
+    background-image: -moz-linear-gradient(top, 	#00FFFF, #008080);  
+    background-image: -ms-linear-gradient(top, 	#00FFFF, #008080);  
+    background-image: -o-linear-gradient(top, 	#00FFFF, #008080);  
+    background-image: linear-gradient(to bottom, 	#00FFFF, #008080);
     width: 400px;
 }
+
 
 .currentlyPlaying{
     font-size: 20px;
@@ -58,5 +77,22 @@ body{
 
 #resultsDiv{
     justify-content: center;
+}
+
+#playSample{
+    font-size: 15px;
+    background: #008080;
+    background-image: -webkit-linear-gradient(top, 	#00FFFF,	#008080);  
+    background-image: -moz-linear-gradient(top, 	#00FFFF, #008080);  
+    background-image: -ms-linear-gradient(top, 	#00FFFF, #008080);  
+    background-image: -o-linear-gradient(top, 	#00FFFF, #008080);  
+    background-image: linear-gradient(to bottom, 	#00FFFF, #008080);
+    -webkit-border-radius: 28;  
+    -moz-border-radius: 28;  
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;  
+    -webkit-box-shadow: 6px 5px 24px #666666;  
+    -moz-box-shadow: 6px 5px 24px #666666;  
+    box-shadow: 6px 5px 24px #666666;
 }
 
