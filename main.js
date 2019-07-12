@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target && event.target.matches('#playSample')) {
             audioPreview.src = event.target.dataset['url']
             audioPreview.autoplay = 'true'
+            audioPreview.loop = 'true'
           }
         })
 
