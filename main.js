@@ -18,6 +18,8 @@ const musicResults = q('#musicResults')
 const artist = q('#artist')
 const trackDiv = q('#trackDiv')
 const audioPreview = q('#audioPreview')
+const musicPlayer = q('#musicPlayer')
+const currentlyPlaying = q('.currentlyPlaying')
 
 // When user releases Enter key, act as if submit button has been clicked
 searchForm.addEventListener('keyup', function(event){
@@ -40,12 +42,15 @@ function getMusic(songs){
     resultsDiv.innerHTML = `
         <a id="#songName" href="${songs.trackViewUrl}"><img src="${songs.artworkUrl100}"></a>
         <br>
-        <button id='playSample' data-url="${songs.previewUrl}">Click Button to Preview: ${songs.trackName}</button>
+        <button id='playSample' data-url="${songs.previewUrl}" data-track="${songs.trackName}" data-artist="${songs.artistName}">Click Button to Preview: ${songs.trackName}</button>
         <h4>Artist: ${songs.artistName} <br> Genre: ${songs.primaryGenreName}</h4>    
     `
 
+    currentlyPlaying.innerHTML = `<p class="currentlyPlaying">Currently Playing: ${songs.trackName} by ${songs.artistName}</p>`
+
     return resultsDiv
 }
+
 
 
 // Main execution
@@ -57,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
             audioPreview.src = event.target.dataset['url']
             audioPreview.autoplay = 'true'
             audioPreview.loop = 'true'
+
+            currentlyPlaying.innerHTML = `<p class="currentlyPlaying">Currently Playing: ${event.target.dataset['track']} by ${event.target.dataset['artist']}</p>`
           }
         })
 
