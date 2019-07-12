@@ -40,7 +40,7 @@ function getMusic(songs){
     resultsDiv.innerHTML = `
         <a id="#songName" href="${songs.trackViewUrl}"><img src="${songs.artworkUrl100}"></a>
         <br>
-        <button id='playSample' data-url="${songs.previewUrl}">Click to Preview: ${songs.trackName}</button>
+        <button id='playSample' data-url="${songs.previewUrl}">Click Button to Preview: ${songs.trackName}</button>
         <h4>Artist: ${songs.artistName} <br> Genre: ${songs.primaryGenreName}</h4>    
     `
 
