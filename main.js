@@ -43,10 +43,12 @@ function getMusic(songs){
     const resultsDiv = document.createElement('div')
     resultsDiv.setAttribute("id", "resultsDiv")
     resultsDiv.innerHTML = `
-        <a id="#songName" href="${songs.trackViewUrl}"><img src="${songs.artworkUrl100}"></a>
-        <br>
-        <button id='playSample' data-url="${songs.previewUrl}" data-track="${songs.trackName}" data-artist="${songs.artistName}">Click Button to Preview: ${songs.trackName}</button>
-        <h4>Artist: ${songs.artistName} <br> Genre: ${songs.primaryGenreName}</h4>    
+        <ul class="detail-list">
+            <li class="list-item img"><a id="#songName" href="${songs.trackViewUrl}"><img src="${songs.artworkUrl100}"></a></li>
+            <br>
+            <li class="list-item music-button"><button id='playSample' data-url="${songs.previewUrl}" data-track="${songs.trackName}" data-artist="${songs.artistName}">Click Button to Preview: ${songs.trackName}</button></li>
+            <li class="list-item artist-and-genre"><h4>Artist: ${songs.artistName} <br> Genre: ${songs.primaryGenreName}</h4></li> 
+        </ul>   
     `
     // Display the song title and artist name of song being played
     currentlyPlaying.innerHTML = `<p class="currentlyPlaying">Currently Playing: ${songs.trackName} by ${songs.artistName}</p>`

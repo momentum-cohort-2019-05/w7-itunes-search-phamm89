@@ -10,14 +10,14 @@
 </head>
 <body> 
 
-    <div>
-        <h1>Music Jam</h1>
+    <div id="titleDiv">
+        <h1 id="musicJam">Music Jam</h1>
     </div>
     <section class="musicPic"></section>
     <br>
     <form id="searchForm">
         <div id="musicSearch"> 
-            <input id="searchBar" type="text" placeholder="Search for Artist or Band..." onfocus="this.value=''" autofocus>
+            <input id="searchBar" type="text" placeholder="Search for Music..." onfocus="this.value=''">
             <button id="searchButton" type="submit">Search</button>
                 <div id="selectionControl">
                     <label class="radio">
@@ -48,8 +48,8 @@
         </audio>
     </div>
     <hr>
-    <div>
-    <h2>Search Results: </h2>
+    <div id="searchDiv">
+    <h2 id="searchHeader">Search Results: </h2>
     </div>
     <br>
     <div id="musicResults">
