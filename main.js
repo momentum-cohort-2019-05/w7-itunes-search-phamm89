@@ -11,6 +11,8 @@ function qAll (selector) {
 // Variables
 let input
 let searchURL
+let checkedRadioButton
+let fullURL
 const searchForm = q('#searchForm')
 const searchButton = q('#searchButton')
 const searchBar = q('#searchBar')
@@ -20,6 +22,7 @@ const trackDiv = q('#trackDiv')
 const audioPreview = q('#audioPreview')
 const musicPlayer = q('#musicPlayer')
 const currentlyPlaying = q('.currentlyPlaying')
+const searchRadioButton = qAll('.searchType')
 
 // When user releases Enter key, act as if submit button has been clicked
 searchForm.addEventListener('keyup', function(event){
@@ -52,6 +55,15 @@ function getMusic(songs){
 }
 
 
+// Function to return checked radio button
+function getCheckedRadioButton(buttons){
+    for(button of buttons){
+        if(button.checked){
+            return button.value
+        }
+    }
+}
+
 
 // Main execution
 document.addEventListener('DOMContentLoaded', function() {
@@ -72,9 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
     searchForm.addEventListener('submit', function(event) {
         event.preventDefault()
         input = encodeURIComponent(searchBar.value)
+        checkedButton = getCheckedRadioButton(searchRadioButton)
         searchURL = `https://itunes-api-proxy.glitch.me/search?term=${(input)}&media=music&entity=musicTrack`
+        fullURL = searchURL + checkedButton
 
-        fetch(searchURL)
+        fetch(fullURL)
             .then(response => response.json())
             .then(function (data) {
                 console.log(data)

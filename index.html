@@ -19,6 +19,20 @@
         <div id="musicSearch"> 
             <input id="searchBar" type="text" placeholder="Search for Artist or Band..." onfocus="this.value=''" autofocus>
             <button id="searchButton" type="submit">Search</button>
+                <div id="selectionControl">
+                    <label class="radio">
+                        <input type="radio" name="searchType" class="searchType" id="artistTerm" value="&attribute=artistTerm" checked="true">
+                        Artist
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="searchType" class ="searchType" id="songTerm" value="&attribute=songTerm">
+                        Song
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="searchType" class="searchType" id="albumTerm" value="&attribute=albumTerm">
+                        Album
+                    </label>
+                </div>
     </form>
     </div>
     <hr>
