@@ -62,7 +62,25 @@ body{
     font-size: 20px;
     font-weight: bold;
     text-transform: capitalize;
+    background-color: aquamarine;
+    -webkit-animation-name: currentlyPlaying; 
+    -webkit-animation-duration: 20s; 
+    animation-name: currentlyPlaying;
+    animation-duration: 20s;
+    justify-content: center;
 }
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes currentlyPlaying {
+    from {background-color: aquamarine;}
+    to {background-color: goldenrod;}
+  }
+  
+  /* Standard */
+  @keyframes currentlyPlaying {
+    from {background-color: aquamarine;}
+    to {background-color: goldenrod;}
+  }
 
 #musicResults{
     display: center;
