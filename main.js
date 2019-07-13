@@ -43,7 +43,7 @@ function getMusic(songs){
     const resultsDiv = document.createElement('div')
     resultsDiv.setAttribute("id", "resultsDiv")
     resultsDiv.innerHTML = `
-        <ul class="detail-list">
+        <ul style="list-style: none;" class="detail-list">
             <li class="list-item img"><a id="#songName" href="${songs.trackViewUrl}"><img src="${songs.artworkUrl100}"></a></li>
             <br>
             <li class="list-item music-button"><button id='playSample' data-url="${songs.previewUrl}" data-track="${songs.trackName}" data-artist="${songs.artistName}">Click Button to Preview: ${songs.trackName}</button></li>
