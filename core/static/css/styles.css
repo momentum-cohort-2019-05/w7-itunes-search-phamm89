@@ -5,7 +5,7 @@ body{
 }
 
 .musicPic{
-    background-image: url("musicPic.jpg");
+    background-image: url("{% static 'images/musicPic.jpg'%}");
     width: 100%;
     width: 100vw;
     height: 250px;
